@@ -18,7 +18,7 @@ async function antijoins(action, event) {
             event = member;
         }
         if (!action) {
-            Error('The action has not been declared (KICK/BAN)')
+            Error('The action has not been spiecified: KICK / BAN');
         }
         if (action.toLowerCase() == 'kick') {
         event.guild.member(event).kick('ZetaCorp NPM - Antijoins active');
