@@ -13,10 +13,15 @@
   "bugs": {
     "url": "https://github.com/ZendrYz/zetacorp-npm/issues"
   },
-  "keywords": [],
+  "keywords": [
+    "antiraid",
+    "security",
+    "zetacorp"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "discord.js": "^12.5.3",
     "megadb": "^3.4.0",
     "zetacorp-antiraid": "^1.0.1"
   }
