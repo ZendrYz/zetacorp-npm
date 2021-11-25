@@ -4,7 +4,7 @@ NPM:
 
 > `npm i zetacorp-antiraid --save`
 
-##General use
+General use
 
 ```js
 const Discord = require('discord.js');
@@ -16,6 +16,7 @@ let prefix = config.prefix;
 client.on('message', async (message) => {
     zc.antiping(6, 5000, 'kick', message) //this has to be one of your first lines of your message event; recommend to put it above your other conditionals, such as if the author is a bot or if the message doesn't start with the prefix
     if (!message.content.startsWith(prefix)) return;
+    zc.antigrabbers(message)
 })
 client.on('guildMemberAdd', member => {
     zc.antibots('kick', member); //
@@ -27,3 +28,4 @@ client.on('channelCreate', channel => {
 
 client.login(config.token);
 ```
+
