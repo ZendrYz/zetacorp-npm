@@ -8,7 +8,7 @@ General use
 
 ```js
 const Discord = require('discord.js');
-const client = new Discord.Client({intents: 32767, fetchAllMembers: true});
+const client = new Discord.Client({intents: 32767});
 const zc = require('zetacorp-antiraid');
 const config = require('./config.json');
 let prefix = config.prefix;
@@ -29,3 +29,6 @@ client.on('channelCreate', channel => {
 client.login(config.token);
 ```
 
+## Functions
+
+> `antijoins(*param)\n`

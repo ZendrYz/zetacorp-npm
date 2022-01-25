@@ -1,14 +1,13 @@
 const chalk = require('chalk');
 const db = require('megadb');
-const zc = require('zetacorp-antiraid')
 var npmZetaCorp = true;
 if (npmZetaCorp == false) return;
 
 function Error(err) {
-    return console.log(chalk.red('ERROR: ') + chalk.yellow(err));
+    return console.log(chalk.red('ZetaCorp NPM - ERROR: ') + chalk.yellow(err));
 }
 function Alert(alert) {
-    return console.log(chalk.yellow('WARNING: ' + chalk.red(alert)));
+    return console.log(chalk.yellow('ZetaCorp NPM - WARNING: ' + chalk.red(alert)));
 }
 
 async function antijoins(action, event) {
@@ -21,7 +20,7 @@ async function antijoins(action, event) {
             Error('The action has not been spiecified: KICK / BAN');
         }
         if (action.toLowerCase() == 'kick') {
-        event.guild.member(event).kick('ZetaCorp NPM - Antijoins active');
+            event.guild.member(event).kick('ZetaCorp NPM - Antijoins activated');
         } else if (action.toLowerCase() == 'ban') {
             event.guild.member(event).ban('ZetaCorp NPM - Antijoins activated')
         }
@@ -71,11 +70,11 @@ async function antiping(mensajes, tiempo, action, event) {
                 if (action.toLowerCase() == 'kick') {
                     msgs.eliminar(event.author.id);
                     event.guild.member(event.author).kick("ZetaCorp NPM - Antiping enabled");
-                    event.channel.send(`<@${event.author.id}> was kicked`);
+                    event.channel.send(`<@${event.author.id}> was kicked because flooded the channel with pings`);
                 } else if (action.toLowerCase() == 'ban') {
                     msgs.eliminar(event.author.id);
                     event.guild.member(event.author).ban("ZetaCorp NPM - Antiping enabled");
-                    event.channel.send(`<@${event.author.id}> was banned`);
+                    event.channel.send(`<@${event.author.id}> was banned because flooded the channel with pings`);
                 } else {
                     Error('The antiping action could not be found');
                 }
