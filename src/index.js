@@ -1,7 +1,15 @@
 const chalk = require('chalk');
+const { Client } = require('discord.js');
 const db = require('megadb');
 var npmZetaCorp = true;
 if (npmZetaCorp == false) return;
+
+class ZetaCorp extends Client {
+    constructor() {
+        super(this.options)    
+        
+    }
+}
 
 function Error(err) {
     return console.log(chalk.red('ZetaCorp NPM - ERROR: ') + chalk.yellow(err));
